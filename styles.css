@@ -84,6 +84,10 @@ body {
   color: #ffffff;
 }
 
+/*---------------------------*\
+ #HERO
+\*---------------------------*/
+
 .hero {
   background: linear-gradient(135deg, #f0fce8 0%, #e9fbe0 100%);
   padding: 4rem 0;
@@ -208,6 +212,10 @@ body {
   box-shadow: 0 5px 15px rgba(36, 95, 53, 0.3);
 }
 
+/*---------------------------*\
+ #ABOUT US
+\*---------------------------*/
+
 .about {
   padding: 6rem 0;
   background-color: #ffffff;
@@ -281,6 +289,256 @@ body {
   box-shadow: 0 5px 15px rgba(36, 95, 53, 0.3);
 }
 
+/*---------------------------*\
+ #FEATURES
+\*---------------------------*/
+
+.features {
+  padding: 6rem 0;
+  background-color: #f8f9fa;
+}
+
+.features-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.features-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.features-subtitle {
+  font-size: 1.2rem;
+  color: #666666;
+  margin-bottom: 4rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.feature-card {
+  background-color: #ffffff;
+  padding: 2.5rem 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(36, 95, 53, 0.15);
+}
+
+.feature-icon {
+  margin-bottom: 1.5rem;
+}
+
+.feature-icon img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.feature-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #245f35;
+  margin-bottom: 1rem;
+}
+
+.feature-description {
+  font-size: 1rem;
+  color: #666666;
+  line-height: 1.6;
+}
+
+/*---------------------------*\
+ #PURCHASE
+\*---------------------------*/
+
+.purchase {
+  padding: 6rem 0;
+  background-color: #ffffff;
+}
+
+.purchase-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.purchase-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.purchase-subtitle {
+  font-size: 1.2rem;
+  color: #666666;
+  margin-bottom: 4rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.pricing-card {
+  background-color: #ffffff;
+  border: 2px solid #e9fbe0;
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  position: relative;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(36, 95, 53, 0.15);
+}
+
+.pricing-card.featured {
+  border-color: #245f35;
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(36, 95, 53, 0.2);
+}
+
+.popular-badge {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #245f35;
+  color: #ffffff;
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.pricing-header {
+  margin-bottom: 2rem;
+}
+
+.plan-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.price {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.currency {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #245f35;
+}
+
+.amount {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #245f35;
+}
+
+.period {
+  font-size: 1rem;
+  color: #666666;
+  font-weight: 500;
+}
+
+.plan-features {
+  margin-bottom: 2rem;
+}
+
+.features-list {
+  list-style: none;
+  text-align: left;
+}
+
+.features-list li {
+  padding: 0.5rem 0;
+  font-size: 1rem;
+  color: #666666;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.plan-button {
+  width: 100%;
+  background-color: #245f35;
+  color: #ffffff;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.plan-button:hover {
+  background-color: #1a4a28;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(36, 95, 53, 0.3);
+}
+
+.featured-button {
+  background-color: #245f35;
+  color: #ffffff;
+}
+
+.featured-button:hover {
+  background-color: #1a4a28;
+}
+
+.purchase-cta {
+  background: linear-gradient(135deg, #f0fce8 0%, #e9fbe0 100%);
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  margin-top: 2rem;
+}
+
+.cta-text {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+/*---------------------------*\
+ #SPONSORS
+\*---------------------------*/
+
 .sponsors {
   padding: 6rem 0;
   background-color: #ffffff;
@@ -330,6 +588,10 @@ body {
   height: 100%;
   object-fit: cover;
 }
+
+/*---------------------------*\
+ #FOOTER
+\*---------------------------*/
 
 .footer {
   background-color: #245f35;
@@ -482,7 +744,9 @@ body {
   }
   
   .about-title,
-  .sponsors-title {
+  .sponsors-title,
+  .features-title,
+  .purchase-title {
     font-size: 2rem;
   }
 }
@@ -531,8 +795,28 @@ body {
   }
   
   .about-title,
-  .sponsors-title {
+  .sponsors-title,
+  .features-title,
+  .purchase-title {
     font-size: 1.8rem;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .feature-card {
+    padding: 2rem 1.5rem;
+  }
+  
+  .pricing-cards {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .pricing-card.featured {
+    transform: none;
   }
   
   .sponsors-logos {
@@ -570,7 +854,9 @@ body {
   }
   
   .about-title,
-  .sponsors-title {
+  .sponsors-title,
+  .features-title,
+  .purchase-title {
     font-size: 1.5rem;
   }
   
@@ -605,6 +891,7 @@ body {
 .cta-button:focus,
 .read-more-btn:focus,
 .submit-btn:focus,
+.plan-button:focus,
 .form-input:focus,
 .form-textarea:focus {
   outline: 2px solid #245f35;
