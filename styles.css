@@ -17,6 +17,10 @@ body {
   background-color: #fff;
 }
 
+/*---------------------------*\
+ #NAVBAR
+\*---------------------------*/
+
 .header {
   background-color: #f5f5f5;
   padding: 1rem 0;
@@ -42,6 +46,16 @@ body {
   color: #333333;
   font-weight: 600;
   font-size: 1.5rem;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  color: #FFFF;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 1rem;
 }
 
 .nav-menu {
@@ -446,6 +460,11 @@ body {
 }
 
 @media (max-width: 1024px) {
+
+  .menu-toggle {
+    display: block;
+  }
+
   .hero-content,
   .about-content {
     grid-template-columns: 1fr;
@@ -471,6 +490,10 @@ body {
 @media (max-width: 768px) {
   .navbar {
     padding: 0 1rem;
+  }
+
+  .menu-toggle {
+    display: block;
   }
   
   .nav-container {
@@ -533,6 +556,11 @@ body {
 }
 
 @media (max-width: 480px) {
+
+  .menu-toggle {
+    display: block;
+  }
+
   .hero-title {
     font-size: 1.8rem;
   }
