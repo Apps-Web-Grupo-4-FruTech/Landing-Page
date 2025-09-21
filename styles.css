@@ -215,6 +215,13 @@ body {
   margin-bottom: 1rem;
 }
 
+.about-subtitle {
+  font-size: 1.2rem;
+  color: #666666;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
 .about-description {
   font-size: 1rem;
   color: #2c3e50;
