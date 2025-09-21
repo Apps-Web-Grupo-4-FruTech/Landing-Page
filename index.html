@@ -1,304 +1,344 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="CultivApp is a web application focused on Advanced IoT technology for smart crop monitoring.">
-  <meta name="author" content="CultiConection">
-  <meta name="copyright" content="Copyright CultiConection team" />
-  <title>CultivApp</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <!-- navbar -->
-  <header class="header">
-    <nav class="navbar">
-      <div class="nav-container">
-        <div class="logo">
-        <!-- Correct way to add the logo image -->
-        <img src="images/cultivapp 1.png" alt="CultivApp Logo">
-      </div>
-        
-        <!--hamburger button-->
-        <button class="menu-toggle" aria-label="Abrir menú">
-          &#9776;
-        </button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="CultivApp is a web application focused on Advanced IoT technology for smart crop monitoring."
+    />
+    <meta name="author" content="CultiConection" />
+    <meta name="copyright" content="Copyright CultiConection team" />
+    <title>CultivApp</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- font awesome for css icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- navbar -->
+    <header class="header">
+      <nav class="navbar">
+        <div class="nav-container">
+          <div class="logo">
+            <img src="images/cultivapp 1.png" alt="CultivApp Logo" />
+          </div>
 
-        <ul class="nav-menu">
-          <li><a href="#" class="nav-link active">Home</a></li>
-          <li><a href="#about" class="nav-link">About us</a></li>
-          <li><a href="#features" class="nav-link">Features</a></li>
-          <li><a href="#purchase" class="nav-link">Purchase</a></li>
-          <li><a href="#contact" class="nav-link">Contact us</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
+          <!--hamburger button-->
+          <button class="menu-toggle" aria-label="Abrir menú">&#9776;</button>
 
-  <!-- hero section -->
-  <section class="hero">
-    <div class="hero-container">
-      <div class="hero-content">
-        <div class="hero-illustration">
-          <div class="illustration-container">
-            <img src="images/back.webp" alt="Smart farming illustration with IoT sensors" class="hero-image">
-            <div class="slider-controls">
-              <button class="slider-arrow left-arrow">‹</button>
-              <div class="slider-dots">
-                <span class="dot active"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-              </div>
-              <button class="slider-arrow right-arrow">›</button>
-            </div>
-          </div>
-        </div>
-        <div class="hero-text">
-          <h1 class="hero-title">Proyecto para mantenimiento de cultivos</h1>
-          <p class="hero-subtitle">Descripción breve</p>
-          <p class="hero-description">
-            Tecnología IoT avanzada para el monitoreo inteligente de cultivos. 
-            Optimiza el rendimiento agrícola con sensores de última generación.
-          </p>
-          <button class="cta-button">Conoce más</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- about us section -->
-  <section class="about" id="about">
-    <div class="about-container">
-      <div class="about-content">
-        <div class="about-image">
-          <div class="image-placeholder">
-            <img src="images/iotsmart.png" alt="About us illustration">
-          </div>
-        </div>
-        <div class="about-text">
-          <h2 class="about-title">Sobre Nosotros</h2>
-          <p class="about-subtitle">Descripción de sub-título</p>
-          <p class="about-description">
-              En CultivApp ayudamos a pequeños agricultores y empresas a mejorar su producción agrícola mediante tecnología. Nuestro objetivo es conectar el conocimiento, las herramientas y los recursos necesarios para impulsar una agricultura más eficiente y sostenible.          </p>
-          <button class="read-more-btn">Read more</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- features section -->
-  <section class="features" id="features">
-    <div class="features-container">
-      <h2 class="features-title">Características Principales</h2>
-      <p class="features-subtitle">Descubre las funcionalidades que hacen de CultivApp la mejor opción para tu agricultura</p>
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">
-            <img src="https://via.placeholder.com/80x80/245f35/ffffff?text=📊" alt="Monitoreo IoT">
-          </div>
-          <h3 class="feature-title">Monitoreo IoT</h3>
-          <p class="feature-description">
-            Sensores inteligentes que monitorean temperatura, humedad, pH del suelo y otros parámetros críticos en tiempo real.
-          </p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">
-            <img src="https://via.placeholder.com/80x80/245f35/ffffff?text=📱" alt="App Móvil">
-          </div>
-          <h3 class="feature-title">App Móvil</h3>
-          <p class="feature-description">
-            Accede a todos los datos de tu cultivo desde cualquier lugar con nuestra aplicación móvil intuitiva y fácil de usar.
-          </p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">
-            <img src="https://via.placeholder.com/80x80/245f35/ffffff?text=🤖" alt="IA Predictiva">
-          </div>
-          <h3 class="feature-title">IA Predictiva</h3>
-          <p class="feature-description">
-            Algoritmos de inteligencia artificial que predicen enfermedades, optimizan riego y mejoran el rendimiento de tus cultivos.
-          </p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">
-            <img src="https://via.placeholder.com/80x80/245f35/ffffff?text=📈" alt="Analytics">
-          </div>
-          <h3 class="feature-title">Analytics Avanzados</h3>
-          <p class="feature-description">
-            Reportes detallados y análisis de tendencias para tomar decisiones informadas sobre tu producción agrícola.
-          </p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">
-            <img src="https://via.placeholder.com/80x80/245f35/ffffff?text=⚡" alt="Automatización">
-          </div>
-          <h3 class="feature-title">Automatización</h3>
-          <p class="feature-description">
-            Controla sistemas de riego, ventilación y fertilización de manera automática basada en los datos de los sensores.
-          </p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">
-            <img src="https://via.placeholder.com/80x80/245f35/ffffff?text=🔔" alt="Alertas">
-          </div>
-          <h3 class="feature-title">Sistema de Alertas</h3>
-          <p class="feature-description">
-            Recibe notificaciones inmediatas cuando los parámetros se salen de los rangos óptimos para tus cultivos.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- purchase section -->
-  <section class="purchase" id="purchase">
-    <div class="purchase-container">
-      <h2 class="purchase-title">Planes y Precios</h2>
-      <p class="purchase-subtitle">Elige el plan que mejor se adapte a las necesidades de tu agricultura</p>
-      <div class="pricing-cards">
-        <div class="pricing-card">
-          <div class="pricing-header">
-            <h3 class="plan-name">Plan Básico</h3>
-            <div class="price">
-              <span class="currency">S/</span>
-              <span class="amount">9.90</span>
-              <span class="period">/mes</span>
-            </div>
-          </div>
-          <div class="plan-features">
-            <ul class="features-list">
-              <li>✅ Hasta 5 sensores IoT</li>
-              <li>✅ Monitoreo básico</li>
-              <li>✅ App móvil</li>
-              <li>✅ Soporte por email</li>
-              <li>❌ IA Predictiva</li>
-              <li>❌ Automatización</li>
-            </ul>
-          </div>
-          <button class="plan-button">Elegir Plan</button>
-        </div>
-        
-        <div class="pricing-card featured">
-          <div class="popular-badge">Más Popular</div>
-          <div class="pricing-header">
-            <h3 class="plan-name">Plan Profesional</h3>
-            <div class="price">
-              <span class="currency">S/</span>
-              <span class="amount">15.90</span>
-              <span class="period">/mes</span>
-            </div>
-          </div>
-          <div class="plan-features">
-            <ul class="features-list">
-              <li>✅ Hasta 15 sensores IoT</li>
-              <li>✅ Monitoreo avanzado</li>
-              <li>✅ App móvil premium</li>
-              <li>✅ IA Predictiva</li>
-              <li>✅ Analytics básicos</li>
-              <li>✅ Soporte prioritario</li>
-            </ul>
-          </div>
-          <button class="plan-button featured-button">Elegir Plan</button>
-        </div>
-        
-        <div class="pricing-card">
-          <div class="pricing-header">
-            <h3 class="plan-name">Plan Empresarial</h3>
-            <div class="price">
-              <span class="currency">S/</span>
-              <span class="amount">30.90</span>
-              <span class="period">/mes</span>
-            </div>
-          </div>
-          <div class="plan-features">
-            <ul class="features-list">
-              <li>✅ Sensores IoT ilimitados</li>
-              <li>✅ Monitoreo completo</li>
-              <li>✅ App móvil enterprise</li>
-              <li>✅ IA Predictiva avanzada</li>
-              <li>✅ Automatización completa</li>
-              <li>✅ Soporte 24/7</li>
-            </ul>
-          </div>
-          <button class="plan-button">Elegir Plan</button>
-        </div>
-      </div>
-      <div class="purchase-cta">
-        <p class="cta-text">¿Necesitas un plan personalizado?</p>
-        <button class="cta-button">Contactar Ventas</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- sponsors section -->
-  <section class="sponsors">
-    <div class="sponsors-container">
-      <h2 class="sponsors-title">Sponsors</h2>
-      <p class="sponsors-subtitle">Trabajamos con</p>  
-      <div class="sponsors-logos">
-        <div class="sponsor-logo">
-          <img src="images/upclogo.png" alt="Sponsor 1">
-        </div>
-        <div class="sponsor-logo">
-          <img src="images/bra3.png" alt="Sponsor 2">
-        </div>
-        <div class="sponsor-logo">
-          <img src="images/bra4.png" alt="Sponsor 3">
-        </div>
-        <div class="sponsor-logo">
-          <img src="images/bra5.png" alt="Sponsor 4">
-        </div>
-        <div class="sponsor-logo">
-          <img src="images/bra1.png" alt="Sponsor 5">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- footer -->
-  <footer class="footer" id="contact">
-    <div class="footer-container">
-      <div class="footer-content">
-        <div class="footer-column">
-          <h3 class="footer-title">Contact us</h3>
-          <p class="footer-subtitle">Send us a message</p>
-          <form class="contact-form">
-            <input type="text" placeholder="Full name" class="form-input" required>
-            <input type="email" placeholder="Your email" class="form-input" required>
-            <textarea placeholder="Your message" class="form-textarea" rows="4" required></textarea>
-            <button type="submit" class="submit-btn">Submit</button>
-          </form>
-        </div>
-        
-        <div class="footer-column">
-          <h3 class="footer-title">Sitemap</h3>
-          <ul class="sitemap">
-            <li><a href="#" class="sitemap-link">All our pages</a></li>
-            <li><a href="#" class="sitemap-link">- Home</a></li>
-            <li><a href="#about" class="sitemap-link">- About us</a></li>
-            <li><a href="#features" class="sitemap-link">- Feature</a></li>
-            <li><a href="#purchase" class="sitemap-link">- Pricing</a></li>
-            <li><a href="#contact" class="sitemap-link">- Contact us</a></li>
+          <ul class="nav-menu">
+            <li><a href="#" class="nav-link active">Inicio</a></li>
+            <li><a href="#about" class="nav-link">Sobre nosotros</a></li>
+            <li><a href="#features" class="nav-link">Características</a></li>
+            <li><a href="#purchase" class="nav-link">Planes</a></li>
+            <li><a href="#contact" class="nav-link">Contáctanos</a></li>
           </ul>
         </div>
-        
-        <div class="footer-column">
-          <div class="contact-info">
-            <div class="footer-logo">
-              <img src="https://via.placeholder.com/80x80/dddddd/666666?text=Logo" alt="Company Logo">
+      </nav>
+    </header>
+
+    <!-- hero section -->
+    <section class="hero">
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="hero-illustration">
+            <div class="illustration-container">
+              <img
+                src="images/back.webp"
+                alt="Smart farming illustration with IoT sensors"
+                class="hero-image"
+              />
             </div>
-            <div class="contact-item">
-              <span class="contact-icon">📞</span>
-              <span class="contact-text">+51 989345672</span>
+          </div>
+          <div class="hero-text">
+            <h1 class="hero-title">Proyecto para mantenimiento de cultivos</h1>
+            <p class="hero-subtitle">Descripción breve</p>
+            <p class="hero-description">
+              Tecnología IoT avanzada para el monitoreo inteligente de cultivos.
+              Optimiza el rendimiento agrícola con sensores de última
+              generación.
+            </p>
+            <button class="cta-button">Conoce más</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- about us section -->
+    <section class="about" id="about">
+      <div class="about-container">
+        <div class="about-content">
+          <div class="about-image">
+            <div class="image-placeholder">
+              <img src="images/iotsmart.png" alt="About us illustration" />
             </div>
-            <div class="contact-item">
-              <span class="contact-icon">✉️</span>
-              <span class="contact-text">xpertdev@gmail.com</span>
+          </div>
+          <div class="about-text">
+            <h2 class="about-title">Sobre Nosotros</h2>
+            <p class="about-description">
+              En CultivApp ayudamos a pequeños agricultores y empresas a mejorar
+              su producción agrícola mediante tecnología. Nuestro objetivo es
+              conectar el conocimiento, las herramientas y los recursos
+              necesarios para impulsar una agricultura más eficiente y
+              sostenible.
+            </p>
+            <button class="read-more-btn">Leer más</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- features section -->
+    <section class="features" id="features">
+      <div class="features-container">
+        <h2 class="features-title">Características Principales</h2>
+        <p class="features-subtitle">
+          Descubre las funcionalidades que hacen de CultivApp la mejor opción
+          para tu agricultura
+        </p>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-chart-bar"></i>
+            </div>
+            <h3 class="feature-title">Monitoreo IoT</h3>
+            <p class="feature-description">
+              Sensores inteligentes que monitorean temperatura, humedad, pH del
+              suelo y otros parámetros críticos en tiempo real.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h3 class="feature-title">App Móvil</h3>
+            <p class="feature-description">
+              Accede a todos los datos de tu cultivo desde cualquier lugar con
+              nuestra aplicación móvil intuitiva y fácil de usar.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-robot"></i>
+            </div>
+            <h3 class="feature-title">IA Predictiva</h3>
+            <p class="feature-description">
+              Algoritmos de inteligencia artificial que predicen enfermedades,
+              optimizan riego y mejoran el rendimiento de tus cultivos.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3 class="feature-title">Analytics Avanzados</h3>
+            <p class="feature-description">
+              Reportes detallados y análisis de tendencias para tomar decisiones
+              informadas sobre tu producción agrícola.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-bolt"></i>
+            </div>
+            <h3 class="feature-title">Automatización</h3>
+            <p class="feature-description">
+              Controla sistemas de riego, ventilación y fertilización de manera
+              automática basada en los datos de los sensores.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-bell"></i>
+            </div>
+            <h3 class="feature-title">Sistema de Alertas</h3>
+            <p class="feature-description">
+              Recibe notificaciones inmediatas cuando los parámetros se salen de
+              los rangos óptimos para tus cultivos.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- purchase section -->
+    <section class="purchase" id="purchase">
+      <div class="purchase-container">
+        <h2 class="purchase-title">Planes y Precios</h2>
+        <p class="purchase-subtitle">
+          Elige el plan que mejor se adapte a las necesidades de tu agricultura
+        </p>
+        <div class="pricing-cards">
+          <div class="pricing-card">
+            <div class="pricing-header">
+              <h3 class="plan-name">Plan Básico</h3>
+              <div class="price">
+                <span class="currency">S/</span>
+                <span class="amount">9.90</span>
+                <span class="period">/mes</span>
+              </div>
+            </div>
+            <div class="plan-features">
+              <ul class="features-list">
+                <li>✅ Hasta 5 sensores IoT</li>
+                <li>✅ Monitoreo básico</li>
+                <li>✅ App móvil</li>
+                <li>✅ Soporte por email</li>
+                <li>❌ IA Predictiva</li>
+                <li>❌ Automatización</li>
+              </ul>
+            </div>
+            <button class="plan-button">Elegir Plan</button>
+          </div>
+
+          <div class="pricing-card featured">
+            <div class="popular-badge">Más Popular</div>
+            <div class="pricing-header">
+              <h3 class="plan-name">Plan Profesional</h3>
+              <div class="price">
+                <span class="currency">S/</span>
+                <span class="amount">15.90</span>
+                <span class="period">/mes</span>
+              </div>
+            </div>
+            <div class="plan-features">
+              <ul class="features-list">
+                <li>✅ Hasta 15 sensores IoT</li>
+                <li>✅ Monitoreo avanzado</li>
+                <li>✅ App móvil premium</li>
+                <li>✅ IA Predictiva</li>
+                <li>✅ Analytics básicos</li>
+                <li>✅ Soporte prioritario</li>
+              </ul>
+            </div>
+            <button class="plan-button featured-button">Elegir Plan</button>
+          </div>
+
+          <div class="pricing-card">
+            <div class="pricing-header">
+              <h3 class="plan-name">Plan Empresarial</h3>
+              <div class="price">
+                <span class="currency">S/</span>
+                <span class="amount">30.90</span>
+                <span class="period">/mes</span>
+              </div>
+            </div>
+            <div class="plan-features">
+              <ul class="features-list">
+                <li>✅ Sensores IoT ilimitados</li>
+                <li>✅ Monitoreo completo</li>
+                <li>✅ App móvil enterprise</li>
+                <li>✅ IA Predictiva avanzada</li>
+                <li>✅ Automatización completa</li>
+                <li>✅ Soporte 24/7</li>
+              </ul>
+            </div>
+            <button class="plan-button">Elegir Plan</button>
+          </div>
+        </div>
+        <div class="purchase-cta">
+          <p class="cta-text">¿Necesitas un plan personalizado?</p>
+          <button class="cta-button">Contactar Ventas</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- sponsors section -->
+    <section class="sponsors">
+      <div class="sponsors-container">
+        <h2 class="sponsors-title">Sponsors</h2>
+        <p class="sponsors-subtitle">Trabajamos con</p>
+        <div class="sponsors-logos">
+          <div class="sponsor-logo">
+            <img src="images/upclogo.png" alt="Sponsor 1" />
+          </div>
+          <div class="sponsor-logo">
+            <img src="images/bra3.png" alt="Sponsor 2" />
+          </div>
+          <div class="sponsor-logo">
+            <img src="images/bra4.png" alt="Sponsor 3" />
+          </div>
+          <div class="sponsor-logo">
+            <img src="images/bra5.png" alt="Sponsor 4" />
+          </div>
+          <div class="sponsor-logo">
+            <img src="images/bra1.png" alt="Sponsor 5" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="footer" id="contact">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <h3 class="footer-title">Contáctanos</h3>
+            <p class="footer-subtitle">Envíanos un mensaje</p>
+            <form class="contact-form">
+              <input
+                type="text"
+                placeholder="Nombre completo"
+                class="form-input"
+                required
+              />
+              <input
+                type="email"
+                placeholder="Tu correo"
+                class="form-input"
+                required
+              />
+              <textarea
+                placeholder="Tu mensaje"
+                class="form-textarea"
+                rows="4"
+                required
+              ></textarea>
+              <button type="submit" class="submit-btn">Enviar</button>
+            </form>
+          </div>
+
+          <div class="footer-column">
+            <h3 class="footer-title">Mapa del sitio</h3>
+            <ul class="sitemap">
+              <li>
+                <a href="#" class="sitemap-link">Todas nuestras páginas</a>
+              </li>
+              <li><a href="#" class="sitemap-link">- Inicio</a></li>
+              <li>
+                <a href="#about" class="sitemap-link">- Sobre nosotros</a>
+              </li>
+              <li>
+                <a href="#features" class="sitemap-link">- Características</a>
+              </li>
+              <li><a href="#purchase" class="sitemap-link">- Planes</a></li>
+              <li><a href="#contact" class="sitemap-link">- Contáctanos</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <div class="contact-info">
+              <div class="footer-logo">
+                <img
+                  src="/images/cultivapp 1.png"
+                  alt="CultivApp"
+                />
+              </div>
+              <div class="contact-item">
+                <span class="contact-icon">📞</span>
+                <span class="contact-text">+51 989345672</span>
+              </div>
+              <div class="contact-item">
+                <span class="contact-icon">✉️</span>
+                <span class="contact-text">xpertdev@gmail.com</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </footer>
-</body>
+    </footer>
+  </body>
 </html>
