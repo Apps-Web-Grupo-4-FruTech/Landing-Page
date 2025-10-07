@@ -119,6 +119,63 @@ function auth(action, data = {}) {
     return { ok: false, error: "Acción no soportada" }
 }
 
+(function () {
+    const btn = document.querySelector(".user-btn");
+    const menu = document.getElementById("userMenu");
+    function buildMenu() {
+        const status = window.auth
+        ? auth("status")
+        : { authenticated: false };
+        if (status.authenticated) {
+        menu.innerHTML =
+            '<a href="#" data-action="settings">Ajustes de usuario</a><a href="#" data-action="goapp">Ir a CultivApp</a>';
+        } else {
+        menu.innerHTML =
+            '<a href="#" data-action="login">Inicio de sesión</a><a href="#" data-action="register">Registro</a>';
+        }
+    }
+    function toggleMenu() {
+        menu.classList.toggle("active");
+    }
+    function closeMenu(e) {
+        if (!menu.contains(e.target) && !btn.contains(e.target))
+        menu.classList.remove("active");
+    }
+    function handleClick(e) {
+        const a = e.target.closest("a");
+        if (!a) return;
+        e.preventDefault();
+        const action = a.getAttribute("data-action");
+        if (action === "login") {
+        const email = prompt("Email");
+        const password = prompt("Contraseña");
+        if (email && password) {
+            const r = auth("login", { email, password });
+            if (!r.ok) alert(r.error);
+            else buildMenu();
+        }
+        } else if (action === "register") {
+        const name = prompt("Nombre");
+        const email = prompt("Email");
+        const password = prompt("Contraseña");
+        if (email && password) {
+            const r = auth("register", { name, email, password });
+            if (!r.ok) alert(r.error);
+            else buildMenu();
+        }
+        } else if (action === "settings") {
+        alert("Abrir ajustes de usuario");
+        } else if (action === "goapp") {
+        location.hash = "#features";
+        }
+        menu.classList.remove("active");
+    }
+    buildMenu();
+    btn.addEventListener("click", toggleMenu);
+    menu.addEventListener("click", handleClick);
+    document.addEventListener("click", closeMenu);
+})();
+
 /**
  * Exports the auth function
  */
