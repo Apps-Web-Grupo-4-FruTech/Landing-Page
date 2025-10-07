@@ -87,7 +87,6 @@ function lpIsAuthenticated() {
  * @param {*} data 
  * @returns 
  */
-
 function lpAuth(action, data = {}) {
     if (action === "register") {
         const { email, password, name } = data
@@ -95,7 +94,12 @@ function lpAuth(action, data = {}) {
         const users = lpReadUsers()
         const exists = users.some(u => u.email.toLowerCase() === String(email).toLowerCase())
         if (exists) return { ok: false, error: "El usuario ya existe" }
-        const user = { id: crypto.randomUUID ? crypto.randomUUID() : String(Date.now()), email, name: name || "", password }
+        const user = { 
+            id: crypto.randomUUID ? crypto.randomUUID() : String(Date.now()), 
+            email, 
+            name: name || "", 
+            password 
+        }
         users.push(user)
         lpWriteUsers(users)
         lpSetCurrentUser({ id: user.id, email: user.email, name: user.name })
@@ -128,128 +132,192 @@ window.auth = lpAuth
 window.isAuthenticated = lpIsAuthenticated
 window.getCurrentUser = lpGetCurrentUser
 
-(function () {
+/**
+ * User menu functionality (for index.html)
+ */
+function initUserMenu() {
     const btn = document.querySelector(".user-btn");
     const menu = document.getElementById("userMenu");
+    
     if (!btn || !menu) return;
+    
+    // Build menu based on authentication status
     function buildMenu() {
-        const status = window.auth
-            ? window.auth("status")
-            : { authenticated: false };
-        if (status.authenticated) {
-            menu.innerHTML =
-                '<a href="#" data-action="settings">Ajustes de usuario</a><a href="#" data-action="goapp">Ir a CultivApp</a>';
+        const isAuth = lpIsAuthenticated();
+        const user = lpGetCurrentUser();
+        
+        if (isAuth && user) {
+            menu.innerHTML = `
+                <div class="user-info">${user.name || user.email}</div>
+                <a href="#" data-action="logout">Cerrar sesión</a>
+                <a href="#features" data-action="goapp">Ir a CultivApp</a>
+            `;
         } else {
-            // Links to auth.html to handle authentication
-            menu.innerHTML =
-                '<a href="auth.html?action=login" data-action="login">Inicio de sesión</a><a href="auth.html?action=register" data-action="register">Registro</a>';
+            menu.innerHTML = `
+                <a href="auth.html?action=login">Inicio de sesión</a>
+                <a href="auth.html?action=register">Registro</a>
+            `;
         }
     }
-    function toggleMenu() {
+    
+    // Toggle menu visibility
+    function toggleMenu(e) {
+        e.stopPropagation();
         menu.classList.toggle("active");
     }
+    
+    // Close menu when clicking outside
     function closeMenu(e) {
-        if (!menu.contains(e.target) && !btn.contains(e.target))
+        if (!menu.contains(e.target) && !btn.contains(e.target)) {
             menu.classList.remove("active");
+        }
     }
-    function handleClick(e) {
-        const a = e.target.closest("a");
-        if (!a) return;
-        const action = a.getAttribute("data-action");
-        // For login/registration, we let the link navigate to auth.html
-        if (action === "login" || action === "register") {
+    
+    // Handle menu item clicks
+    function handleMenuClick(e) {
+        const link = e.target.closest("a");
+        if (!link) return;
+        
+        const action = link.getAttribute("data-action");
+        
+        // If it's a regular link (login/register), let it navigate
+        if (!action) {
             menu.classList.remove("active");
             return;
         }
+        
+        // Handle specific actions
         e.preventDefault();
-        if (action === "settings") {
-            alert("Open user settings");
+        
+        if (action === "logout") {
+            lpAuth("logout");
+            buildMenu(); // Rebuild menu after logout
+            alert("Sesión cerrada correctamente");
         } else if (action === "goapp") {
-            location.hash = "#features";
+            window.location.hash = "#features";
         }
+        
         menu.classList.remove("active");
     }
+    
+    // Initialize
     buildMenu();
     btn.addEventListener("click", toggleMenu);
-    menu.addEventListener("click", handleClick);
+    menu.addEventListener("click", handleMenuClick);
     document.addEventListener("click", closeMenu);
-})();
+}
 
-
-(function () {
+/**
+ * Auth forms functionality (for auth.html)
+ */
+function initAuthForms() {
     const loginForm = document.getElementById("loginForm");
     const registerForm = document.getElementById("registerForm");
+    
     if (!loginForm || !registerForm) return;
-
+    
+    // Get action from URL
     function getAction() {
-        const params = new URLSearchParams(location.search);
+        const params = new URLSearchParams(window.location.search);
         const action = params.get("action");
-        return action === "register" || action === "login" ? action : "login";
+        return action === "register" ? "register" : "login";
     }
-    function show(action) {
-        document.getElementById("authTitle").textContent =
-        action === "register" ? "Crear cuenta" : "Iniciar sesión";
-        loginForm.style.display =
-        action === "login" ? "grid" : "none";
-        registerForm.style.display =
-        action === "register" ? "grid" : "none";
-        document.getElementById("authMessage").textContent = "";
+    
+    // Show the correct form
+    function showForm(action) {
+        const authTitle = document.getElementById("authTitle");
+        const authMessage = document.getElementById("authMessage");
+        
+        if (authTitle) {
+            authTitle.textContent = action === "register" ? "Crear cuenta" : "Iniciar sesión";
+        }
+        
+        loginForm.style.display = action === "login" ? "grid" : "none";
+        registerForm.style.display = action === "register" ? "grid" : "none";
+        
+        if (authMessage) {
+            authMessage.textContent = "";
+        }
     }
-
-    function onLoginSubmit(e) {
+    
+    // Handle login form submission
+    function handleLogin(e) {
         e.preventDefault();
         const email = document.getElementById("loginEmail").value.trim();
         const password = document.getElementById("loginPassword").value;
-        const r = window.auth("login", { email, password });
+        const result = lpAuth("login", { email, password });
         const msg = document.getElementById("authMessage");
-        if (!r.ok) {
-        msg.textContent = r.error || "Error al iniciar sesión";
-        msg.dataset.type = "error";
-        return;
+        
+        if (!result.ok) {
+            msg.textContent = result.error || "Error al iniciar sesión";
+            msg.style.color = "red";
+            return;
         }
+        
         msg.textContent = "¡Bienvenido! Redirigiendo...";
-        msg.dataset.type = "success";
+        msg.style.color = "green";
         setTimeout(() => {
-        location.href = "index.html";
+            window.location.href = "index.html";
         }, 800);
     }
-
-    function onRegisterSubmit(e) {
+    
+    // Handle register form submission
+    function handleRegister(e) {
         e.preventDefault();
         const name = document.getElementById("registerName").value.trim();
         const email = document.getElementById("registerEmail").value.trim();
         const password = document.getElementById("registerPassword").value;
-        const r = window.auth("register", { name, email, password });
+        const result = lpAuth("register", { name, email, password });
         const msg = document.getElementById("authMessage");
-        if (!r.ok) {
-        msg.textContent = r.error || "Error al registrar";
-        msg.dataset.type = "error";
-        return;
+        
+        if (!result.ok) {
+            msg.textContent = result.error || "Error al registrar";
+            msg.style.color = "red";
+            return;
         }
+        
         msg.textContent = "Cuenta creada. Redirigiendo...";
-        msg.dataset.type = "success";
+        msg.style.color = "green";
         setTimeout(() => {
-        location.href = "index.html";
+            window.location.href = "index.html";
         }, 800);
     }
-
-    loginForm.addEventListener("submit", onLoginSubmit);
-    registerForm.addEventListener("submit", onRegisterSubmit);
-
-    document
-        .getElementById("goLogin")
-        .addEventListener("click", function (e) {
-        e.preventDefault();
-        history.replaceState({}, "", "?action=login");
-        show("login");
+    
+    // Switch between login and register
+    const goLogin = document.getElementById("goLogin");
+    const goRegister = document.getElementById("goRegister");
+    
+    if (goLogin) {
+        goLogin.addEventListener("click", function(e) {
+            e.preventDefault();
+            history.replaceState({}, "", "?action=login");
+            showForm("login");
         });
-    document
-        .getElementById("goRegister")
-        .addEventListener("click", function (e) {
-        e.preventDefault();
-        history.replaceState({}, "", "?action=register");
-        show("register");
+    }
+    
+    if (goRegister) {
+        goRegister.addEventListener("click", function(e) {
+            e.preventDefault();
+            history.replaceState({}, "", "?action=register");
+            showForm("register");
         });
+    }
+    
+    // Attach event listeners
+    loginForm.addEventListener("submit", handleLogin);
+    registerForm.addEventListener("submit", handleRegister);
+    
+    // Initialize with correct form
+    showForm(getAction());
+}
 
-    show(getAction());
-})();
+/**
+ * Initialize the appropriate functionality based on the page
+ */
+document.addEventListener("DOMContentLoaded", function() {
+    // Initialize user menu on index.html
+    initUserMenu();
+    
+    // Initialize auth forms on auth.html
+    initAuthForms();
+});
