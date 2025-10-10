@@ -150,7 +150,7 @@ function initUserMenu() {
             menu.innerHTML = `
                 <div class="user-info">${user.name || user.email}</div>
                 <a href="#" data-action="logout">Cerrar sesión</a>
-                <a href="#features" data-action="goapp">Ir a CultivApp</a>
+                <a href="https://frontend-frutech-static.onrender.com" data-action="goapp">Ir a CultivApp</a>
             `;
         } else {
             menu.innerHTML = `
@@ -194,9 +194,8 @@ function initUserMenu() {
             buildMenu(); // Rebuild menu after logout
             alert("Sesión cerrada correctamente");
         } else if (action === "goapp") {
-            window.location.hash = "#features";
+            window.open("https://frontend-frutech-static.onrender.com", "_blank");
         }
-        
         menu.classList.remove("active");
     }
     
