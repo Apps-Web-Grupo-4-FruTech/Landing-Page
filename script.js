@@ -1,4 +1,3 @@
-
 /**
  * Hamburger button creation
  */
@@ -20,7 +19,6 @@ if (btn && menu) {
         })
     })
 }
-
 
 /**
  * User auth functionality
@@ -311,7 +309,20 @@ function initAuthForms() {
 }
 
 /**
- * Initialize the appropriate functionality based on the page
+ * Go to App button functionality
+ */
+function initGoToAppButton() {
+    const goToAppBtn = document.querySelector(".go-to-app-btn");
+    
+    if (goToAppBtn) {
+        goToAppBtn.addEventListener("click", function() {
+            window.open("https://frontend-frutech-static.onrender.com", "_blank");
+        });
+    }
+}
+
+/**
+ * Initialize functionality on DOM ready
  */
 document.addEventListener("DOMContentLoaded", function() {
     // Initialize user menu on index.html
@@ -319,4 +330,6 @@ document.addEventListener("DOMContentLoaded", function() {
     
     // Initialize auth forms on auth.html
     initAuthForms();
+    
+    initGoToAppButton();
 });
