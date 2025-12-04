@@ -66,27 +66,40 @@ body {
 }
 
 .user-area {
-  position: relative;
   display: flex;
   align-items: center;
   margin-left: 0.5rem;
 }
 
-.user-btn {
+.go-to-app-btn {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
   border: none;
   background: #245f35;
   color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
-.user-btn:hover {
+.go-to-app-btn:hover {
   background: #1a4a28;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(36, 95, 53, 0.3);
+}
+
+.go-to-app-btn:focus {
+  outline: 2px solid #245f35;
+  outline-offset: 2px;
+}
+
+.go-to-app-btn i {
+  font-size: 1.1rem;
 }
 
 .user-menu {
@@ -637,7 +650,7 @@ body {
 
 .video-wrapper {
   position: relative;
-  padding-bottom: 56.25%; 
+  padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
   border-radius: 10px;
@@ -661,8 +674,19 @@ body {
   .video-card {
     padding: 1rem;
   }
-}
 
+  .go-to-app-btn span {
+    display: none;
+  }
+
+  .go-to-app-btn {
+    padding: 0.75rem;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    justify-content: center;
+  }
+}
 
 /*---------------------------*\
  #FOOTER
