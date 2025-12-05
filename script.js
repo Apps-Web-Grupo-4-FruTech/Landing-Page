@@ -21,15 +21,6 @@ if (btn && menu) {
 }
 
 /**
- * User auth functionality
- * STORAGE_USER_KEYS is the key for the users in the local storage
- * STORAGE_CURRENT_KEY is the key for the current user in the local storage
- */
-const STORAGE_USERS_KEY = "lp_users"
-const STORAGE_CURRENT_KEY = "lp_current_user"
-
-
-/**
  * Reads users from the local storage
  * @returns users from the local storage
  */
