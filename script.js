@@ -148,7 +148,7 @@ function initUserMenu() {
             menu.innerHTML = `
                 <div class="user-info">${user.name || user.email}</div>
                 <a href="#" data-action="logout">Cerrar sesión</a>
-                <a href="https://frontend-frutech-static.onrender.com" data-action="goapp">Ir a CultivApp</a>
+                <a href="https://frontend-frutech.vercel.app/" data-action="goapp">Ir a CultivApp</a>
             `;
         } else {
             menu.innerHTML = `
@@ -192,7 +192,7 @@ function initUserMenu() {
             buildMenu(); // Rebuild menu after logout
             alert("Sesión cerrada correctamente");
         } else if (action === "goapp") {
-            window.open("https://frontend-frutech-static.onrender.com", "_blank");
+            window.open("https://frontend-frutech.vercel.app/", "_blank");
         }
         menu.classList.remove("active");
     }
@@ -316,7 +316,7 @@ function initGoToAppButton() {
     
     if (goToAppBtn) {
         goToAppBtn.addEventListener("click", function() {
-            window.open("https://frontend-frutech-static.onrender.com", "_blank");
+            window.open("https://frontend-frutech.vercel.app/", "_blank");
         });
     }
 }
