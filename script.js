@@ -148,7 +148,7 @@ function initUserMenu() {
             menu.innerHTML = `
                 <div class="user-info">${user.name || user.email}</div>
                 <a href="#" data-action="logout">Cerrar sesión</a>
-                <a href="https://frontend-frutech-static.onrender.com" data-action="goapp">Ir a CultivApp</a>
+                <a href="https://frontend-frutech.vercel.app/" data-action="goapp">Ir a CultivApp</a>
             `;
         } else {
             menu.innerHTML = `
